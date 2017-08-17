@@ -1,5 +1,5 @@
 /**
- * Created by dasxx on 2017-08-17.
+ * Created by dasxx.
  */
 //define(name,["依赖的模块列表"],function(arg){  });
 //参数1: name   [String]  可选项,如果设置了name,表示该模块是个具名模块,在require加载时,必须先设置别名,并且别名必须和name保持一致
