@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>require基本用法</title>
+</head>
+<body>
+<!--先引用require.js文件-->
+<script src="js/require.js"></script>
+<script>
+  //requirejs可以对AMD标准的js文件进行模块化,可以对非AMD标准的js进行模块化
+  //但是两种模块化得方式有所不同,所以任何js文件在进行模块化之前都需要去手动判断是否符合AMD标准
+  
+  //require.js插件对外只暴露了三个接口方法
+    //1.require === requirejs   :是用来加载模块的
+    //2.define                  :是用来定义模块的
+  
+//require.config()  用来配置require加载模块的一些参数
+  require.config({
+    baseUrl:"js/",     //配置所有加载模块的公共路径,该属性一旦配置,所有加载模块的路径必然会跟该属性进行拼串
+    paths  :{          //为所有模块的路径配置别名
+      //别名 :  "路径地址(省略baseUrl部分与.js部分)"
+      test: "01-test/test"
+    },
+    shim:{            //给非AMD规范的模块设置依赖与返回值
+      test:{        //对应的模块别名
+        deps:[],        //数组,存放依赖的模块路径或者别名
+        exports: ""     //可以设置依赖模块中任意全局变量作为返回值
+      }
+    }
+    
+  });
+  
+//require([],function(arg){  });
+  //参数1:[]       :加载的模块列表,可以是路径(省略.js)或者别名(加载的顺序是无序的)
+  //参数2:function :回调函数,在所有模块加载成功之后才会被执行的函数.该函数的形参可以用来接收加载的模块的返回值,并且形参可以是多个,与加载模块的返回值一一对应
+  //         ☆所以在参数1中,优先把有返回值的模块写在前面
+  require(["test"],function () {
+    console.log("初次体验require模块化得用法");
+  })
+  
+//test.js中 有关于define()定义模块的详解
+</script>
+</body>
+</html>
