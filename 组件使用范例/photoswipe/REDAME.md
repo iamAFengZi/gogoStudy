@@ -6,15 +6,15 @@
 
 ## git源码
   `官网：http://photoswipe.com/`
+  
   `git：https://github.com/dimsemenov/photoswipe`
 
 ## 应用过的场景
   vue多页面开发项目，其应用步骤：
+  
     1、在html中引用photoswipe.css、default-skin.css、photoswipe.min.js、photoswipe-ui-default.min.js等4个文件
 
     2、在vue中template部分复制以下代码
-    ```
-    ```javascript
       <!-- Root element of PhotoSwipe. Must have class pswp. -->
       <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
@@ -65,10 +65,8 @@
         </div>
       </div>
       <!-- <button id="btn" @click="openPhotoSwipe">Open PhotoSwipe</button> -->
-    ```
 
     3、在method中创建openPhotoSwipe方法函数
-    ```javascript
       openPhotoSwipe(index) {
         var pswpElement = document.querySelectorAll('.pswp')[0];
 
@@ -86,7 +84,6 @@
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
       }
-    ```
       图片数据格式：imgList = [
         {
           src: '图片地址，目前指只试过oss地址',
