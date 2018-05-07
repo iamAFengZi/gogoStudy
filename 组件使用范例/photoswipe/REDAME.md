@@ -1,18 +1,20 @@
 # 用之前先看我
+======================
 
 ## 说明
   本组件是pc和移动平台都能使用。
 
 ## git源码
-  官网：http://photoswipe.com/
-  git：https://github.com/dimsemenov/photoswipe
+  `官网：http://photoswipe.com/`
+  `git：https://github.com/dimsemenov/photoswipe`
 
 ## 应用过的场景
   vue多页面开发项目，其应用步骤：
     1、在html中引用photoswipe.css、default-skin.css、photoswipe.min.js、photoswipe-ui-default.min.js等4个文件
 
     2、在vue中template部分复制以下代码
-    ```javescript
+    ```
+    ```javascript
       <!-- Root element of PhotoSwipe. Must have class pswp. -->
       <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="pswp__bg"></div>
@@ -63,7 +65,7 @@
         </div>
       </div>
       <!-- <button id="btn" @click="openPhotoSwipe">Open PhotoSwipe</button> -->
-    ```javascript
+    ```
 
     3、在method中创建openPhotoSwipe方法函数
     ```javascript
